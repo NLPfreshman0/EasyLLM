@@ -14,7 +14,7 @@
 ### 国外大模型
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
 | --- | --- | --- | --- | --- |
-| 1 | GPT-4,GPT-3.5,GPT-3,ChatGPT,Instruction GPT | openai | openai的大模型系列，未开源，可通过api访问 | [官网](https://openai.com/) |
+| 1 | **GPT-4**,**GPT-3.5**,**GPT-3**,**ChatGPT**,**Instruction GPT** | openai | openai的大模型系列，未开源，可通过api访问 | [官网](https://openai.com/) |
 | 2 | chatgpt | openai | 模型B是一个用于文本分类的深度学习模型，可用于情感分析、垃圾邮件检测等任务。 | [下载链接](https://example.com/modelB) |
 | 3 | 模型C | 机构C | 模型C是一个计算机视觉模型，用于图像分类和物体检测，训练于大规模图像数据集。 | [下载链接](https://example.com/modelC) |
 | 4 | 模型D | 机构D | 这是一个多模态模型，可以同时处理文本和图像数据，适用于文本图像融合任务。 | [下载链接](https://example.com/modelD) |
