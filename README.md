@@ -35,7 +35,7 @@ pytorch >= 2.0<br>
 (conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia)<br>
 bitsandbytes==0.39.0 #QLoRA量化<br>
 deepspeed            #加速训练框架<br>
-详细环境配置见requirement.txt
+详细环境配置见**requirement.txt**
 
 ## 3. 训练代码
 ### 1. 预训练
