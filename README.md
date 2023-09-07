@@ -21,7 +21,7 @@
 | 5 | 模型E | 机构E |  | [下载链接](https://example.com/modelE) |
 ### 国内大模型
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
-| --- | --- | ---- | ----- | ----- |
+| --- | --- | ------- | ----- | ----- |
 | 1 | **ChatGLM** | 清华&智谱 | 由清华大学开源的、支持中英双语问答的对话语言模型，并针对中文进行了优化,仅6B模型开源 | [ChatGLM-6B](https://huggingface.co/THUDM/chatglm-6b) |
 | 2 | **ChatGLM2** | 清华&智谱 | 具有更长的上下文以及更高效的推理速度， 仅6B开源 | [ChatGLM2-6B](https://huggingface.co/THUDM/chatglm2-6b) |
 | 3 | 模型C | 机构C |  | [下载链接](https://example.com/modelC) |
