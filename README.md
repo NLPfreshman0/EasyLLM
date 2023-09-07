@@ -48,9 +48,9 @@ deepspeed            #加速训练框架<br>
 
 ## 3. 训练代码
 ### 1. 预训练
-预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
-deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
-没有足够的资源进行预训练，该脚本暂未亲自测试
+- 预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
+- deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
+- 没有足够的资源进行预训练，该脚本暂未亲自测试
 
 
 ## 4. 使用工具
