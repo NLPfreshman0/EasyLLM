@@ -30,13 +30,13 @@
 | 5 | 模型E | 机构E |  | [下载链接](https://example.com/modelE) |
 
 ## 2. 环境配置
-python >= 3.9
-pytorch >= 2.0 
-(conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia)
-bitsandbytes==0.39.0 #QLoRA量化
-deepspeed            #加速训练框架
-git+https://github.com/PanQiWei/AutoGPTQ.git  #量化
-其它的环境详见requirement.txt
+python >= 3.9<br>
+pytorch >= 2.0<br>
+(conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia)<br>
+bitsandbytes==0.39.0 #QLoRA量化<br>
+deepspeed            #加速训练框架<br>
+git+https://github.com/PanQiWei/AutoGPTQ.git  #量化<br>
+其它的环境详见requirement.txt<br>
 
 ## 3. 训练代码
 ### 1. 预训练
