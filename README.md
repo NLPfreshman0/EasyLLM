@@ -22,8 +22,8 @@
 ### 国内大模型
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
 | --- | --- | --- | --- | --- |
-| 1 | GPT-4 | openai | 目前最强大的模型，未开源，可通过api访问 | [官网]([https://example.com/modelA](https://openai.com/)) |
-| 2 | chatgpt | openai | 模型B是一个用于文本分类的深度学习模型，可用于情感分析、垃圾邮件检测等任务。 | [下载链接](https://example.com/modelB) |
+| 1 | **ChatGLM** | 清华&智谱 | 由清华大学开源的、支持中英双语问答的对话语言模型，并针对中文进行了优化,仅6B模型开源 | [ChatGLM-6B]([https://huggingface.co/THUDM/chatglm-6b)) |
+| 2 | **ChatGLM2** | 清华&智谱 | 具有更长的上下文以及更高效的推理速度， 仅6B开源 | [ChatGLM2-6B]([https://example.com/modelB](https://huggingface.co/THUDM/chatglm2-6b)) |
 | 3 | 模型C | 机构C | 模型C是一个计算机视觉模型，用于图像分类和物体检测，训练于大规模图像数据集。 | [下载链接](https://example.com/modelC) |
 | 4 | 模型D | 机构D | 这是一个多模态模型，可以同时处理文本和图像数据，适用于文本图像融合任务。 | [下载链接](https://example.com/modelD) |
 | 5 | 模型E | 机构E | 模型E是一个用于语音识别的深度神经网络模型，适用于语音转文本任务。 | [下载链接](https://example.com/modelE) |
