@@ -489,7 +489,7 @@ def main():
         text_column_name = "text" if "text" in column_names else column_names[0]
     elif len(column_names)==2:
         input_column_name = 'input' if 'input' in column_names else column_names[0]
-        target_column_name = 'target' if 'target' in column_names else column_names[0]
+        target_column_name = 'target' if 'target' in column_names else column_names[1]
         train_on_inputs=False
     else:
         raise ValueError('输入文件列数不对')
