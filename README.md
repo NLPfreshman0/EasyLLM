@@ -15,8 +15,8 @@
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
 | --- | --- | --- | --- | --- |
 | 1 | **GPT-4**, **GPT-3.5**, **GPT-3**, **ChatGPT**, **Instruction GPT** | openai | openai的系列大模型，未开源，可通过api访问 | [官网](https://openai.com/) |
-| 2 | **LLaMA** | Meta | 首个开源大模型 | [7B](https://huggingface.co/huggyllama/llama-7b)[13B](https://huggingface.co/huggyllama/llama-13b)<br>[30B](https://huggingface.co/huggyllama/llama-30b)[65B](https://huggingface.co/huggyllama/llama-65b) |
-| 3 | **LLaMA2** | Meta | 与LLaMA相比，训练数据提高40%，上下文长度翻倍 | [7B](https://huggingface.co/meta-llama/Llama-2-7b-hf)[13B](https://huggingface.co/meta-llama/Llama-2-13b)[70B](https://huggingface.co/meta-llama/Llama-2-70b-hf)<br>[Chat7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)[Chat13B](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)[Chat70B](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)|
+| 2 | **LLaMA** | Meta | 首个开源大模型 | [7B](https://huggingface.co/huggyllama/llama-7b)|[13B](https://huggingface.co/huggyllama/llama-13b)|[30B](https://huggingface.co/huggyllama/llama-30b)|[65B](https://huggingface.co/huggyllama/llama-65b) |
+| 3 | **LLaMA2** | Meta | 与LLaMA相比，训练数据提高40%，上下文长度翻倍 | [7B](https://huggingface.co/meta-llama/Llama-2-7b-hf)|[13B](https://huggingface.co/meta-llama/Llama-2-13b)|[70B](https://huggingface.co/meta-llama/Llama-2-70b-hf)<br>[Chat7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)|[Chat13B](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)|[Chat70B](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)|
 | 4 | 模型D | 机构D | 这是一个多模态模型，可以同时处理文本和图像数据，适用于文本图像融合任务。 | [下载链接](https://example.com/modelD) |
 | 5 | 模型E | 机构E | 模型E是一个用于语音识别的深度神经网络模型，适用于语音转文本任务。 | [下载链接](https://example.com/modelE) |
 ### 国内大模型
