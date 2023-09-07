@@ -37,13 +37,20 @@ bitsandbytes==0.39.0 #QLoRA量化<br>
 deepspeed            #加速训练框架<br>
 详细环境配置见**requirement.txt**
 
+## 3. 数据集准备
+### 1.预训练
+
+### 2.微调
+
+### 3.sft
+
+
 ## 3. 训练代码
 ### 1. 预训练
-这一部分包含了一些大模型的训练代码示例，可以帮助你了解如何从头开始训练大模型或者微调现有模型以适应特定任务。每个示例都会包含：
-- 训练数据集的准备方法
-- 模型训练的步骤
-- 训练超参数的设置
-- 评估和测试模型的方法
+预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
+deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
+没有足够的资源进行预训练，该脚本暂未亲自测试
+
 
 ## 4. 使用工具
 在这个部分，你会找到一些用于使用和部署大模型的工具和实用程序。这些工具可能包括：
