@@ -17,16 +17,16 @@
 | 1 | **GPT-4**, **GPT-3.5**, **GPT-3**, **ChatGPT**, **Instruction GPT** | openai | openai的系列大模型，未开源，可通过api访问 | [官网](https://openai.com/) |
 | 2 | **LLaMA** | Meta | 首个开源大模型 | [7B](https://huggingface.co/huggyllama/llama-7b)\|[13B](https://huggingface.co/huggyllama/llama-13b)\|[30B](https://huggingface.co/huggyllama/llama-30b)\|[65B](https://huggingface.co/huggyllama/llama-65b) |
 | 3 | **LLaMA2** | Meta | 与LLaMA相比，训练数据提高40%，上下文长度翻倍 | [7B](https://huggingface.co/meta-llama/Llama-2-7b-hf)\|[13B](https://huggingface.co/meta-llama/Llama-2-13b)\|[70B](https://huggingface.co/meta-llama/Llama-2-70b-hf)<br>[Chat7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)\|[Chat13B](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)\|[Chat70B](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)|
-| 4 | 模型D | 机构D | 这是一个多模态模型，可以同时处理文本和图像数据，适用于文本图像融合任务。 | [下载链接](https://example.com/modelD) |
-| 5 | 模型E | 机构E | 模型E是一个用于语音识别的深度神经网络模型，适用于语音转文本任务。 | [下载链接](https://example.com/modelE) |
+| 4 | 模型D | 机构D |  | [下载链接](https://example.com/modelD) |
+| 5 | 模型E | 机构E |  | [下载链接](https://example.com/modelE) |
 ### 国内大模型
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
 | --- | --- | --- | --- | --- |
-| 1 | **ChatGLM** | 清华&智谱 | 由清华大学开源的、支持中英双语问答的对话语言模型，并针对中文进行了优化,仅6B模型开源 | [ChatGLM-6B]([https://huggingface.co/THUDM/chatglm-6b)) |
-| 2 | **ChatGLM2** | 清华&智谱 | 具有更长的上下文以及更高效的推理速度， 仅6B开源 | [ChatGLM2-6B]([https://example.com/modelB](https://huggingface.co/THUDM/chatglm2-6b)) |
-| 3 | 模型C | 机构C | 模型C是一个计算机视觉模型，用于图像分类和物体检测，训练于大规模图像数据集。 | [下载链接](https://example.com/modelC) |
-| 4 | 模型D | 机构D | 这是一个多模态模型，可以同时处理文本和图像数据，适用于文本图像融合任务。 | [下载链接](https://example.com/modelD) |
-| 5 | 模型E | 机构E | 模型E是一个用于语音识别的深度神经网络模型，适用于语音转文本任务。 | [下载链接](https://example.com/modelE) |
+| 1 | **ChatGLM** | 清华&智谱 | 由清华大学开源的、支持中英双语问答的对话语言模型，并针对中文进行了优化,仅6B模型开源 | [ChatGLM-6B](https://huggingface.co/THUDM/chatglm-6b) |
+| 2 | **ChatGLM2** | 清华&智谱 | 具有更长的上下文以及更高效的推理速度， 仅6B开源 | [ChatGLM2-6B](https://huggingface.co/THUDM/chatglm2-6b) |
+| 3 | 模型C | 机构C |  | [下载链接](https://example.com/modelC) |
+| 4 | 模型D | 机构D |  | [下载链接](https://example.com/modelD) |
+| 5 | 模型E | 机构E |  | [下载链接](https://example.com/modelE) |
 ## 2. 训练代码
 这一部分包含了一些大模型的训练代码示例，可以帮助你了解如何从头开始训练大模型或者微调现有模型以适应特定任务。每个示例都会包含：
 
