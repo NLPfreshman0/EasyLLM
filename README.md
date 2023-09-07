@@ -49,7 +49,7 @@ deepspeed            #加速训练框架<br>
 格式："<s>Human: +问题+\n</s><s>Assistant: +答案+</s>" <br>
 例如："<s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: 因为地球是目前为止唯一已知存在生命的行星。</s>"<br>
 ```
-- 仅在label上计算loss，需处理成两列：<br>
+- 仅在label上计算loss，需处理成两列(列名随意)：<br>
 ```
 格式：第一列："<s>Human: +问题+\n</s><s>Assistant: "  第二列："答案+</s>"<br>
 例如：第一列："<s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: "  第二列："因为地球是目前为止唯一已知存在生命的行星。</s>"<br>
@@ -61,6 +61,64 @@ deepspeed            #加速训练框架<br>
 - 预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
 - deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
 - 没有足够的资源进行预训练，该脚本暂未亲自测试
+
+### 2. LoRA微调
+脚本为train/sft/finetune_lora.sh:
+```
+output_model=save_folder
+# 需要修改到自己的输入目录
+if [ ! -d ${output_model} ];then  
+    mkdir ${output_model}
+fi
+cp ./finetune.sh ${output_model}
+deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设置使用的显卡编号与端口
+    --model_name_or_path meta-llama/Llama-2-7b-chat-hf \ #设置训练的基模型路径
+    --train_files ../../data/train_sft.csv \
+                ../../data/train_sft_sharegpt.csv \
+    --validation_files  ../../data/dev_sft.csv \
+                         ../../data/dev_sft_sharegpt.csv \
+    --per_device_train_batch_size 1 \
+    --per_device_eval_batch_size 1 \
+    --do_train \
+    --do_eval \
+    --use_fast_tokenizer false \
+    --output_dir ${output_model} \
+    --evaluation_strategy  steps \
+    --max_eval_samples 800 \
+    --learning_rate 1e-4 \
+    --gradient_accumulation_steps 8 \
+    --num_train_epochs 10 \
+    --warmup_steps 400 \
+    --load_in_bits 4 \
+    --lora_r 8 \
+    --lora_alpha 32 \
+    --target_modules q_proj,k_proj,v_proj,o_proj,down_proj,gate_proj,up_proj \
+    --logging_dir ${output_model}/logs \
+    --logging_strategy steps \
+    --logging_steps 10 \
+    --save_strategy steps \
+    --preprocessing_num_workers 10 \
+    --save_steps 20 \
+    --eval_steps 20 \
+    --save_total_limit 2000 \
+    --seed 42 \
+    --disable_tqdm false \
+    --ddp_find_unused_parameters false \
+    --block_size 2048 \
+    --report_to tensorboard \
+    --overwrite_output_dir \
+    --deepspeed ds_config_zero2.json \
+    --ignore_data_skip true \
+    --bf16 \
+    --gradient_checkpointing \
+    --bf16_full_eval \
+    --ddp_timeout 18000000 \
+    | tee -a ${output_model}/train.log
+    
+
+
+    # --resume_from_checkpoint ${output_model}/checkpoint-20400 \
+```
 
 
 ## 4. 使用工具
