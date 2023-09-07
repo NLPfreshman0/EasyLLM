@@ -48,7 +48,7 @@ deepspeed            #加速训练框架<br>
 格式：\"<s>Human: +问题+\n</s><s>Assistant: +答案+</s>\" <br>
 例如：\"<s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: 因为地球是目前为止唯一已知存在生命的行星。</s>\"<br>
 - 仅在label上计算loss，需处理成两列：<br>
-格式：第一列：\"<s>Human: +问题+\n</s><s>Assistant: "  第二列："答案+</s>\"<br>
+格式：第一列：\"<s>Human: +问题+\n</s><s>Assistant: \"  第二列："答案+</s>\"<br>
 例如：第一列：\"<s>Human: 用一句话描述地球为什么是独一无二的。</s><s>Assistant: \"  第二列：\"因为地球是目前为止唯一已知存在生命的行星。</s>\"<br>
 文件样例可见data/
 
