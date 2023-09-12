@@ -7,8 +7,9 @@
 ## 内容清单
 1. [大模型总结](#1-大模型总结)
 2. [环境配置](#2-环境配置)
-3. [训练代码](#2-训练代码)
-4. [使用工具](#3-使用工具)
+3. [数据集准备](#3-数据集准备)
+4. [训练代码](#4-训练代码)
+5. [使用工具](#3-使用工具)
 
 ## 1. 大模型总结
 在这个部分，你可以找到已经收集的各种大模型的列表。对于开源的大模型将提供下载链接。
@@ -56,7 +57,7 @@ deepspeed            #加速训练框架<br>
 ```
 文件样例可见data/train_sft.csv
 
-## 3. 训练代码
+## 4. 训练代码
 ### 1. 预训练
 - 预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
 - deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
