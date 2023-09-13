@@ -122,6 +122,31 @@ deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设
 
 ## 5. 使用工具
 在这个部分，你会找到一些用于使用和部署大模型的工具和实用程序。
+### 1.构建webui,可以供本地或互联网访问
+python chat_gradio.py --model_name_or_path=model_path --share #share参数允许互联网访问
+![image](https://github.com/NLPfreshman0/EasyLLM/assets/55648342/b919372f-d528-45f5-a991-1d8112a4a114)
+### 2.构建api，允许本地访问
+使用fastapi 首先pip install fastapi uvicorn
+#### 1.启动服务
+```
+python acceleate_server.py \
+--model_path path \
+--gpus "0" \
+--infer_dtype "int8" \
+--model_source "llama2_chinese"
+```
+参数说明：
+- model_path 模型的本地路径
+- gpus 使用的显卡编号，类似"0"、 "0,1"
+- infer_dtype 模型加载后的参数数据类型，可以是 int4, int8, float16
+- model_source 模型的源，可以是llama2_chinese 或者 llama2_meta，根据下载的模型不同去区分，如果下载的是FlagAlpha下载的则用llama2_chinese。
+#### 2.启动客户端
+```
+python acceleate_client.py
+```
+
+
+
 
 
 
