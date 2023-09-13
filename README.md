@@ -138,7 +138,6 @@ python acceleate_server.py \
 - model_path 模型的本地路径
 - gpus 使用的显卡编号，类似"0"、 "0,1"
 - infer_dtype 模型加载后的参数数据类型，可以是 int4, int8, float16，默认为int8
-- 
 #### 2.启动客户端
 ```
 python acceleate_client.py
