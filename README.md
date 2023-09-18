@@ -9,7 +9,8 @@
 2. [环境配置](#2-环境配置)
 3. [数据集准备](#3-数据集准备)
 4. [训练代码](#4-训练代码)
-5. [使用工具](#5-使用工具)
+5. [模型推理](#5-模型推理)
+6. [使用工具](#6-使用工具)
 
 ## 1. 大模型总结
 在这个部分，你可以找到已经收集的各种大模型的列表。对于开源的大模型将提供下载链接。
@@ -116,9 +117,16 @@ deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设
 
     # --resume_from_checkpoint ${output_model}/checkpoint-20400 \          #是否从checkpoint开始训练，从checkpoint训练需指定路径
 ```
-
-
-## 5. 使用工具
+## 5. 模型推理
+1.LoRA权重合并，使用脚本train/merge/merge.sh
+```
+CUDA_VISIBLE_DEVICES=0 python merge_peft_adapter.py \
+    --adapter_model_name /checkpoint-2200 \           #lora的checkpoint所在目录
+    --output_name checkpoint-2200_merge \             #合并之后模型的存储位置
+    --load8bit false \                                #是否执行8bit量化
+    --tokenizer_fast false                            #llama模型只能为false
+```
+## 6. 使用工具
 在这个部分，你会找到一些用于使用和部署大模型的工具和实用程序。
 ### 1.构建webui,可以供本地或互联网访问
 python chat_gradio.py --model_name_or_path=model_path --share #share参数允许互联网访问
