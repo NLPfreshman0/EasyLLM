@@ -2,11 +2,11 @@ output_model=/data/zhangdacao/AtomGPT/save/llama13b-snli-lora_1
 if [ ! -d ${output_model} ];then  
     mkdir ${output_model}
 fi
-cp ./finetune.sh ${output_model}
+cp ./finetune_cls.sh ${output_model}
 deepspeed --include localhost:0,1 --master_port 29506 finetune_cls_lora.py \
-    --model_name_or_path /data/zhangdacao/opensource-model/llama/models--decapoda-research--llama-13b-hf/snapshots/438770a656712a5072229b62256521845d4de5ce \
-    --train_files /data/zhangdacao/AtomGPT/AtomGPT-main/data/snli/train.csv \
-    --validation_files  /data/zhangdacao/AtomGPT/AtomGPT-main/data/snli/validation.csv \
+    --model_name_or_path model_path
+    --train_files train.csv \
+    --validation_files  dev.csv \
     --per_device_train_batch_size 16 \
     --per_device_eval_batch_size 16 \
     --do_train \
