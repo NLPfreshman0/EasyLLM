@@ -56,13 +56,16 @@ deepspeed            #加速训练框架<br>
 ```
 文件样例可见data/train_sft.csv
 
+### 3.分类任务
+两列数据，第一列为要分类的文本，第二列为标签 [text, label]
+
 ## 4. 训练代码
 ### 1. 预训练
 - 预训练脚本见train/pretrain/pretrain.sh,预训练代码为train/pretrain/pretrain_clm.py<br>
 - deepspeed加速配置文件，单卡训练使用train/pretrain/ds_config_zero2.json，多卡训练使用train/pretrain/ds_config_zero3.json<br>
 - 没有足够的资源进行预训练，该脚本暂未亲自测试
 
-### 2. LoRA微调
+### 2. sft LoRA微调
 脚本为train/sft/finetune_lora.sh:
 ```
 output_model=save_folder                                                    #设置保存模型的路径
@@ -117,6 +120,9 @@ deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设
 
     # --resume_from_checkpoint ${output_model}/checkpoint-20400 \          #是否从checkpoint开始训练，从checkpoint训练需指定路径
 ```
+### 3.分类任务lora微调
+- 脚本为train/sft/finetune_cls.sh，参数与lora微调类似，会额外报错最后的分类层权重score_layer_weights.bin
+- 模型加载可参考train/sft/test_cls.py
 ## 5. 模型推理
 ### 1.加载模型时合并lora权重
 ```
