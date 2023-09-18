@@ -118,7 +118,37 @@ deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设
     # --resume_from_checkpoint ${output_model}/checkpoint-20400 \          #是否从checkpoint开始训练，从checkpoint训练需指定路径
 ```
 ## 5. 模型推理
-1.LoRA权重合并，使用脚本train/merge/merge.sh
+### 1.加载模型时合并lora权重
+```
+import torch
+from transformers import AutoTokenizer, AutoModelForCausalLM
+from peft import PeftModel,PeftConfig
+finetune_model_path=''                        #lora权重所在路径
+config = PeftConfig.from_pretrained(finetune_model_path)
+tokenizer = AutoTokenizer.from_pretrained(config.base_model_name_or_path,use_fast=False)
+tokenizer.pad_token = tokenizer.eos_token
+model = AutoModelForCausalLM.from_pretrained(config.base_model_name_or_path,device_map='auto',torch_dtype=torch.float16,load_in_8bit=True)
+model = PeftModel.from_pretrained(model, finetune_model_path, device_map={"": 0})
+model =model.eval()
+input_ids = tokenizer(['<s>Human: 介绍一下北京\n</s><s>Assistant: '], return_tensors="pt",add_special_tokens=False).input_ids.to('cuda')        
+generate_input = {
+    "input_ids":input_ids,
+    "max_new_tokens":512,
+    "do_sample":True,
+    "top_k":50,
+    "top_p":0.95,
+    "temperature":0.3,
+    "repetition_penalty":1.3,
+    "eos_token_id":tokenizer.eos_token_id,
+    "bos_token_id":tokenizer.bos_token_id,
+    "pad_token_id":tokenizer.pad_token_id
+}
+generate_ids  = model.generate(**generate_input)
+text = tokenizer.decode(generate_ids[0])
+print(text)
+```
+### 2.先合并LoRA权重，使用脚本train/merge/merge.sh，再直接加载合并后的模型进行推理
+合并权重
 ```
 CUDA_VISIBLE_DEVICES=0 python merge_peft_adapter.py \
     --adapter_model_name /checkpoint-2200 \           #lora的checkpoint所在目录
@@ -126,6 +156,14 @@ CUDA_VISIBLE_DEVICES=0 python merge_peft_adapter.py \
     --load8bit false \                                #是否执行8bit量化
     --tokenizer_fast false                            #llama模型只能为false
 ```
+加载模型
+```
+from transformers import AutoTokenizer, AutoModelForCausalLM
+tokenizer = AutoTokenizer.from_pretrained(path)
+model = AutoModelForCausalLM.from_pretrained(path)
+后面的代码同1
+```
+对于需要多次使用的模型，先合并可加快之后加载的速度
 ## 6. 使用工具
 在这个部分，你会找到一些用于使用和部署大模型的工具和实用程序。
 ### 1.构建webui,可以供本地或互联网访问
