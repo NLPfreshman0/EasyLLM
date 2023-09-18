@@ -121,7 +121,7 @@ deepspeed --include localhost:0 --master_port 29505  finetune_clm_lora.py \ #设
     # --resume_from_checkpoint ${output_model}/checkpoint-20400 \          #是否从checkpoint开始训练，从checkpoint训练需指定路径
 ```
 ### 3.分类任务lora微调
-- 脚本为train/sft/finetune_cls.sh，参数与lora微调类似，会额外报错最后的分类层权重score_layer_weights.bin
+- 脚本为train/sft/finetune_cls.sh，参数与sft lora微调类似，会额外保存最后的分类层权重score_layer_weights.bin
 - 模型加载可参考train/sft/test_cls.py
 ## 5. 模型推理
 ### 1.加载模型时合并lora权重
