@@ -20,7 +20,7 @@
 | 1 | **GPT-4**, **GPT-3.5**, **GPT-3**, **ChatGPT**, **Instruction GPT** | openai | openai的系列大模型，未开源，可通过api访问 | [官网](https://openai.com/) |
 | 2 | **LLaMA** | Meta | 首个开源大模型 | [7B](https://huggingface.co/huggyllama/llama-7b)\|[13B](https://huggingface.co/huggyllama/llama-13b)\|[30B](https://huggingface.co/huggyllama/llama-30b)\|[65B](https://huggingface.co/huggyllama/llama-65b) |
 | 3 | **LLaMA2** | Meta | 与LLaMA相比，训练数据提高40%，上下文长度翻倍 | [7B](https://huggingface.co/meta-llama/Llama-2-7b-hf)\|[13B](https://huggingface.co/meta-llama/Llama-2-13b)\|[70B](https://huggingface.co/meta-llama/Llama-2-70b-hf)<br>[Chat7B](https://huggingface.co/meta-llama/Llama-2-7b-chat-hf)\|[Chat13B](https://huggingface.co/meta-llama/Llama-2-13b-chat-hf)\|[Chat70B](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)|
-| 4 | 模型D | 机构D |  | [下载链接](https://example.com/modelD) |
+| 4 | NLLB | meta | 支持200种语言互译 | [600M](https://huggingface.co/facebook/nllb-200-distilled-600M)\|[1.3B](https://huggingface.co/facebook/nllb-200-1.3B)\|[3.3B](https://huggingface.co/facebook/nllb-200-3.3B)\|[54B](https://huggingface.co/facebook/nllb-moe-54b) |
 | 5 | 模型E | 机构E |  | [下载链接](https://example.com/modelE) |
 ### 国内大模型
 | 序号 | 模型名称 | 机构 | 简介 | 下载地址 |
